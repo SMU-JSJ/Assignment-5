@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		EFCC8C6D1AC8898100175FA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C6C1AC8898100175FA5 /* main.m */; };
 		EFCC8C701AC8898100175FA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C6F1AC8898100175FA5 /* AppDelegate.m */; };
-		EFCC8C731AC8898100175FA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C721AC8898100175FA5 /* ViewController.m */; };
+		EFCC8C731AC8898100175FA5 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C721AC8898100175FA5 /* ViewController.mm */; };
 		EFCC8C761AC8898100175FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C741AC8898100175FA5 /* Main.storyboard */; };
 		EFCC8C781AC8898100175FA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C771AC8898100175FA5 /* Images.xcassets */; };
 		EFCC8C7B1AC8898100175FA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C791AC8898100175FA5 /* LaunchScreen.xib */; };
 		EFCC8C871AC8898200175FA5 /* LightMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C861AC8898200175FA5 /* LightMusicTests.m */; };
+		EFCC8C911AC8A5AB00175FA5 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCC8C901AC8A5AB00175FA5 /* MediaPlayer.framework */; };
+		EFCC8C9A1AC8A82C00175FA5 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C931AC8A82C00175FA5 /* AudioFileReader.mm */; };
+		EFCC8C9B1AC8A82C00175FA5 /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C951AC8A82C00175FA5 /* AudioFileWriter.m */; };
+		EFCC8C9C1AC8A82C00175FA5 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C971AC8A82C00175FA5 /* Novocaine.m */; };
+		EFCC8C9D1AC8A82C00175FA5 /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C991AC8A82C00175FA5 /* RingBuffer.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +38,22 @@
 		EFCC8C6E1AC8898100175FA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EFCC8C6F1AC8898100175FA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EFCC8C711AC8898100175FA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EFCC8C721AC8898100175FA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EFCC8C721AC8898100175FA5 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		EFCC8C751AC8898100175FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFCC8C771AC8898100175FA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EFCC8C7A1AC8898100175FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EFCC8C801AC8898100175FA5 /* LightMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCC8C851AC8898200175FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFCC8C861AC8898200175FA5 /* LightMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightMusicTests.m; sourceTree = "<group>"; };
+		EFCC8C901AC8A5AB00175FA5 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		EFCC8C921AC8A82C00175FA5 /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		EFCC8C931AC8A82C00175FA5 /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
+		EFCC8C941AC8A82C00175FA5 /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
+		EFCC8C951AC8A82C00175FA5 /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
+		EFCC8C961AC8A82C00175FA5 /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		EFCC8C971AC8A82C00175FA5 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		EFCC8C981AC8A82C00175FA5 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		EFCC8C991AC8A82C00175FA5 /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCC8C911AC8A5AB00175FA5 /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,8 @@
 		EFCC8C5E1AC8898100175FA5 = {
 			isa = PBXGroup;
 			children = (
+				EFCC8C9E1AC8A83B00175FA5 /* Novocaine */,
+				EFCC8C901AC8A5AB00175FA5 /* MediaPlayer.framework */,
 				EFCC8C691AC8898100175FA5 /* LightMusic */,
 				EFCC8C831AC8898200175FA5 /* LightMusicTests */,
 				EFCC8C681AC8898100175FA5 /* Products */,
@@ -84,7 +101,7 @@
 				EFCC8C6E1AC8898100175FA5 /* AppDelegate.h */,
 				EFCC8C6F1AC8898100175FA5 /* AppDelegate.m */,
 				EFCC8C711AC8898100175FA5 /* ViewController.h */,
-				EFCC8C721AC8898100175FA5 /* ViewController.m */,
+				EFCC8C721AC8898100175FA5 /* ViewController.mm */,
 				EFCC8C741AC8898100175FA5 /* Main.storyboard */,
 				EFCC8C771AC8898100175FA5 /* Images.xcassets */,
 				EFCC8C791AC8898100175FA5 /* LaunchScreen.xib */,
@@ -117,6 +134,21 @@
 				EFCC8C851AC8898200175FA5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFCC8C9E1AC8A83B00175FA5 /* Novocaine */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC8C921AC8A82C00175FA5 /* AudioFileReader.h */,
+				EFCC8C931AC8A82C00175FA5 /* AudioFileReader.mm */,
+				EFCC8C941AC8A82C00175FA5 /* AudioFileWriter.h */,
+				EFCC8C951AC8A82C00175FA5 /* AudioFileWriter.m */,
+				EFCC8C961AC8A82C00175FA5 /* Novocaine.h */,
+				EFCC8C971AC8A82C00175FA5 /* Novocaine.m */,
+				EFCC8C981AC8A82C00175FA5 /* RingBuffer.h */,
+				EFCC8C991AC8A82C00175FA5 /* RingBuffer.mm */,
+			);
+			name = Novocaine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFCC8C731AC8898100175FA5 /* ViewController.m in Sources */,
+				EFCC8C731AC8898100175FA5 /* ViewController.mm in Sources */,
 				EFCC8C701AC8898100175FA5 /* AppDelegate.m in Sources */,
+				EFCC8C9C1AC8A82C00175FA5 /* Novocaine.m in Sources */,
+				EFCC8C9D1AC8A82C00175FA5 /* RingBuffer.mm in Sources */,
+				EFCC8C9B1AC8A82C00175FA5 /* AudioFileWriter.m in Sources */,
 				EFCC8C6D1AC8898100175FA5 /* main.m in Sources */,
+				EFCC8C9A1AC8A82C00175FA5 /* AudioFileReader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

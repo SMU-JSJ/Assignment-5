@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+typedef enum musicMode {
+    RELAX,
+    PARTY,
+    GAME
+} MusicMode;
 
 @end
 
