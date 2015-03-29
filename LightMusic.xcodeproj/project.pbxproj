@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EFCC8C6D1AC8898100175FA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C6C1AC8898100175FA5 /* main.m */; };
+		EFCC8C701AC8898100175FA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C6F1AC8898100175FA5 /* AppDelegate.m */; };
+		EFCC8C731AC8898100175FA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C721AC8898100175FA5 /* ViewController.m */; };
+		EFCC8C761AC8898100175FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C741AC8898100175FA5 /* Main.storyboard */; };
+		EFCC8C781AC8898100175FA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C771AC8898100175FA5 /* Images.xcassets */; };
+		EFCC8C7B1AC8898100175FA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C791AC8898100175FA5 /* LaunchScreen.xib */; };
+		EFCC8C871AC8898200175FA5 /* LightMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C861AC8898200175FA5 /* LightMusicTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EFCC8C811AC8898100175FA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFCC8C5F1AC8898100175FA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFCC8C661AC8898100175FA5;
+			remoteInfo = LightMusic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EFCC8C671AC8898100175FA5 /* LightMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFCC8C6B1AC8898100175FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFCC8C6C1AC8898100175FA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EFCC8C6E1AC8898100175FA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EFCC8C6F1AC8898100175FA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EFCC8C711AC8898100175FA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EFCC8C721AC8898100175FA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EFCC8C751AC8898100175FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EFCC8C771AC8898100175FA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EFCC8C7A1AC8898100175FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		EFCC8C801AC8898100175FA5 /* LightMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFCC8C851AC8898200175FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFCC8C861AC8898200175FA5 /* LightMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightMusicTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFCC8C641AC8898100175FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFCC8C7D1AC8898100175FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EFCC8C5E1AC8898100175FA5 = {
+			isa = PBXGroup;
+			children = (
+				EFCC8C691AC8898100175FA5 /* LightMusic */,
+				EFCC8C831AC8898200175FA5 /* LightMusicTests */,
+				EFCC8C681AC8898100175FA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFCC8C681AC8898100175FA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC8C671AC8898100175FA5 /* LightMusic.app */,
+				EFCC8C801AC8898100175FA5 /* LightMusicTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFCC8C691AC8898100175FA5 /* LightMusic */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC8C6E1AC8898100175FA5 /* AppDelegate.h */,
+				EFCC8C6F1AC8898100175FA5 /* AppDelegate.m */,
+				EFCC8C711AC8898100175FA5 /* ViewController.h */,
+				EFCC8C721AC8898100175FA5 /* ViewController.m */,
+				EFCC8C741AC8898100175FA5 /* Main.storyboard */,
+				EFCC8C771AC8898100175FA5 /* Images.xcassets */,
+				EFCC8C791AC8898100175FA5 /* LaunchScreen.xib */,
+				EFCC8C6A1AC8898100175FA5 /* Supporting Files */,
+			);
+			path = LightMusic;
+			sourceTree = "<group>";
+		};
+		EFCC8C6A1AC8898100175FA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC8C6B1AC8898100175FA5 /* Info.plist */,
+				EFCC8C6C1AC8898100175FA5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFCC8C831AC8898200175FA5 /* LightMusicTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC8C861AC8898200175FA5 /* LightMusicTests.m */,
+				EFCC8C841AC8898200175FA5 /* Supporting Files */,
+			);
+			path = LightMusicTests;
+			sourceTree = "<group>";
+		};
+		EFCC8C841AC8898200175FA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC8C851AC8898200175FA5 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFCC8C661AC8898100175FA5 /* LightMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFCC8C8A1AC8898200175FA5 /* Build configuration list for PBXNativeTarget "LightMusic" */;
+			buildPhases = (
+				EFCC8C631AC8898100175FA5 /* Sources */,
+				EFCC8C641AC8898100175FA5 /* Frameworks */,
+				EFCC8C651AC8898100175FA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LightMusic;
+			productName = LightMusic;
+			productReference = EFCC8C671AC8898100175FA5 /* LightMusic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EFCC8C7F1AC8898100175FA5 /* LightMusicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFCC8C8D1AC8898200175FA5 /* Build configuration list for PBXNativeTarget "LightMusicTests" */;
+			buildPhases = (
+				EFCC8C7C1AC8898100175FA5 /* Sources */,
+				EFCC8C7D1AC8898100175FA5 /* Frameworks */,
+				EFCC8C7E1AC8898100175FA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFCC8C821AC8898100175FA5 /* PBXTargetDependency */,
+			);
+			name = LightMusicTests;
+			productName = LightMusicTests;
+			productReference = EFCC8C801AC8898100175FA5 /* LightMusicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFCC8C5F1AC8898100175FA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = SMU;
+				TargetAttributes = {
+					EFCC8C661AC8898100175FA5 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					EFCC8C7F1AC8898100175FA5 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = EFCC8C661AC8898100175FA5;
+					};
+				};
+			};
+			buildConfigurationList = EFCC8C621AC8898100175FA5 /* Build configuration list for PBXProject "LightMusic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFCC8C5E1AC8898100175FA5;
+			productRefGroup = EFCC8C681AC8898100175FA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFCC8C661AC8898100175FA5 /* LightMusic */,
+				EFCC8C7F1AC8898100175FA5 /* LightMusicTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFCC8C651AC8898100175FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFCC8C761AC8898100175FA5 /* Main.storyboard in Resources */,
+				EFCC8C7B1AC8898100175FA5 /* LaunchScreen.xib in Resources */,
+				EFCC8C781AC8898100175FA5 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFCC8C7E1AC8898100175FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFCC8C631AC8898100175FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFCC8C731AC8898100175FA5 /* ViewController.m in Sources */,
+				EFCC8C701AC8898100175FA5 /* AppDelegate.m in Sources */,
+				EFCC8C6D1AC8898100175FA5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFCC8C7C1AC8898100175FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFCC8C871AC8898200175FA5 /* LightMusicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFCC8C821AC8898100175FA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFCC8C661AC8898100175FA5 /* LightMusic */;
+			targetProxy = EFCC8C811AC8898100175FA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EFCC8C741AC8898100175FA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFCC8C751AC8898100175FA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EFCC8C791AC8898100175FA5 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFCC8C7A1AC8898100175FA5 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFCC8C881AC8898200175FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EFCC8C891AC8898200175FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EFCC8C8B1AC8898200175FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LightMusic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EFCC8C8C1AC8898200175FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LightMusic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EFCC8C8E1AC8898200175FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LightMusicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightMusic.app/LightMusic";
+			};
+			name = Debug;
+		};
+		EFCC8C8F1AC8898200175FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LightMusicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightMusic.app/LightMusic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFCC8C621AC8898100175FA5 /* Build configuration list for PBXProject "LightMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFCC8C881AC8898200175FA5 /* Debug */,
+				EFCC8C891AC8898200175FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFCC8C8A1AC8898200175FA5 /* Build configuration list for PBXNativeTarget "LightMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFCC8C8B1AC8898200175FA5 /* Debug */,
+				EFCC8C8C1AC8898200175FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EFCC8C8D1AC8898200175FA5 /* Build configuration list for PBXNativeTarget "LightMusicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFCC8C8E1AC8898200175FA5 /* Debug */,
+				EFCC8C8F1AC8898200175FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFCC8C5F1AC8898100175FA5 /* Project object */;
+}
