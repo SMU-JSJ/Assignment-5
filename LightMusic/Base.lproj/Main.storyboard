@@ -20,14 +20,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RD5-oO-SGj">
                                 <rect key="frame" x="8" y="195" width="304" height="328"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="by Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-2i-I2E">
-                                        <rect key="frame" x="108" y="172" width="87" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by The J. Geils Band" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-2i-I2E">
+                                        <rect key="frame" x="43" y="171" width="217" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Freeze Frame" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-bH-4i7">
-                                        <rect key="frame" x="25" y="116" width="251" height="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freeze Frame" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhQ-bH-4i7">
+                                        <rect key="frame" x="8" y="115" width="288" height="48"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -35,9 +35,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="YhQ-bH-4i7" secondAttribute="centerX" constant="1.5" id="1vs-Q2-Ngj"/>
                                     <constraint firstAttribute="centerY" secondItem="YhQ-bH-4i7" secondAttribute="centerY" constant="25" id="EXB-UO-qg1"/>
+                                    <constraint firstItem="YhQ-bH-4i7" firstAttribute="leading" secondItem="RD5-oO-SGj" secondAttribute="leading" constant="8" id="KqJ-Xe-pzx"/>
                                     <constraint firstItem="0UZ-2i-I2E" firstAttribute="top" secondItem="YhQ-bH-4i7" secondAttribute="bottom" constant="8" id="cEI-mY-0bT"/>
+                                    <constraint firstAttribute="trailing" secondItem="YhQ-bH-4i7" secondAttribute="trailing" constant="8" id="jOT-XA-4Vd"/>
                                     <constraint firstAttribute="centerX" secondItem="0UZ-2i-I2E" secondAttribute="centerX" constant="1" id="vHK-N1-zqM"/>
                                 </constraints>
                             </view>
@@ -51,10 +52,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4na-B3-mq3">
-                                <rect key="frame" x="274" y="523" width="30" height="30"/>
+                                <rect key="frame" x="269" y="518" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Qn5-Aq-ptg"/>
-                                    <constraint firstAttribute="width" constant="30" id="tt5-P5-LK7"/>
+                                    <constraint firstAttribute="height" constant="35" id="Qn5-Aq-ptg"/>
+                                    <constraint firstAttribute="width" constant="35" id="tt5-P5-LK7"/>
                                 </constraints>
                                 <state key="normal" image="play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,7 +74,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="relaxButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Wdo-3v-k4z"/>
+                                    <action selector="relaxClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2GH-2o-xXW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b10-gu-PaZ">
@@ -83,7 +84,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="relaxLabelClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CNu-IX-Dby"/>
+                                    <action selector="relaxClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="t2R-tL-6fj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wa0-Wy-1kd">
@@ -94,7 +95,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="partyLabelClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yL8-Yd-j8r"/>
+                                    <action selector="partyClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="SeX-kV-fF0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdn-YY-0TC">
@@ -105,7 +106,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="gameLabelClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h0Z-7Q-cgf"/>
+                                    <action selector="gameClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NLl-vg-NeS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mat-qJ-bTW">
@@ -118,7 +119,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="partyButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3nW-bm-4Ea"/>
+                                    <action selector="partyClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0yL-8V-5dB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UwV-gQ-UnF">
@@ -131,11 +132,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="gameButtonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dGG-y6-1rE"/>
+                                    <action selector="gameClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PD7-C1-ea4"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QHV-DW-ob5">
-                                <rect key="frame" x="14" y="523" width="249" height="31"/>
+                                <rect key="frame" x="14" y="523" width="237" height="31"/>
                                 <connections>
                                     <action selector="volumeSliderChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="tsD-zU-hqT"/>
                                 </connections>
@@ -151,7 +152,7 @@
                             <constraint firstItem="QHV-DW-ob5" firstAttribute="top" secondItem="RD5-oO-SGj" secondAttribute="bottom" id="PC5-mg-Bk4"/>
                             <constraint firstItem="RD5-oO-SGj" firstAttribute="top" secondItem="O9c-hI-T2E" secondAttribute="bottom" id="QJI-uR-Eas"/>
                             <constraint firstItem="mdn-YY-0TC" firstAttribute="leading" secondItem="Wa0-Wy-1kd" secondAttribute="trailing" constant="24" id="QpK-BB-4Re"/>
-                            <constraint firstItem="4na-B3-mq3" firstAttribute="leading" secondItem="QHV-DW-ob5" secondAttribute="trailing" constant="13" id="UCE-DH-9Y6"/>
+                            <constraint firstItem="4na-B3-mq3" firstAttribute="leading" secondItem="QHV-DW-ob5" secondAttribute="trailing" constant="20" id="UCE-DH-9Y6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O9c-hI-T2E" secondAttribute="trailing" id="UKY-dr-gjz"/>
                             <constraint firstItem="Wa0-Wy-1kd" firstAttribute="top" secondItem="mat-qJ-bTW" secondAttribute="bottom" constant="6" id="V0J-9K-9XU"/>
                             <constraint firstItem="QHV-DW-ob5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="WK7-eA-fQv"/>

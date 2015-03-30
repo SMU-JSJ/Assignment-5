@@ -14,11 +14,21 @@
 		EFCC8C781AC8898100175FA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C771AC8898100175FA5 /* Images.xcassets */; };
 		EFCC8C7B1AC8898100175FA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C791AC8898100175FA5 /* LaunchScreen.xib */; };
 		EFCC8C871AC8898200175FA5 /* LightMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C861AC8898200175FA5 /* LightMusicTests.m */; };
-		EFCC8C911AC8A5AB00175FA5 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCC8C901AC8A5AB00175FA5 /* MediaPlayer.framework */; };
-		EFCC8C9A1AC8A82C00175FA5 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C931AC8A82C00175FA5 /* AudioFileReader.mm */; };
-		EFCC8C9B1AC8A82C00175FA5 /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C951AC8A82C00175FA5 /* AudioFileWriter.m */; };
-		EFCC8C9C1AC8A82C00175FA5 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C971AC8A82C00175FA5 /* Novocaine.m */; };
-		EFCC8C9D1AC8A82C00175FA5 /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C991AC8A82C00175FA5 /* RingBuffer.mm */; };
+		EFCC8CA01AC8AB2200175FA5 /* satisfaction.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCC8C9F1AC8AB2200175FA5 /* satisfaction.mp3 */; };
+		EFCC8CA21AC8AC9800175FA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCC8CA11AC8AC9800175FA5 /* UIKit.framework */; };
+		EFCC8CA41AC8AC9E00175FA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCC8CA31AC8AC9E00175FA5 /* Foundation.framework */; };
+		EFCC8CAD1AC8ACC100175FA5 /* AudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8CA61AC8ACC100175FA5 /* AudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EFCC8CAE1AC8ACC100175FA5 /* AudioFileWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8CA81AC8ACC100175FA5 /* AudioFileWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EFCC8CAF1AC8ACC100175FA5 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8CAA1AC8ACC100175FA5 /* Novocaine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EFCC8CB01AC8ACC100175FA5 /* RingBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8CAC1AC8ACC100175FA5 /* RingBuffer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EFF26C7E1AC8B4BE008182BB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCC8C901AC8A5AB00175FA5 /* MediaPlayer.framework */; };
+		EFF26C861AC8C53C008182BB /* Freeze Frame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C7F1AC8C53C008182BB /* Freeze Frame.mp3 */; };
+		EFF26C871AC8C53C008182BB /* Seasons of Love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C801AC8C53C008182BB /* Seasons of Love.mp3 */; };
+		EFF26C881AC8C53C008182BB /* All About That Bass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C811AC8C53C008182BB /* All About That Bass.mp3 */; };
+		EFF26C891AC8C53C008182BB /* Sweet Caroline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C821AC8C53C008182BB /* Sweet Caroline.mp3 */; };
+		EFF26C8B1AC8C53C008182BB /* Keep Holding On.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C841AC8C53C008182BB /* Keep Holding On.mp3 */; };
+		EFF26C8C1AC8C53C008182BB /* Uptown Funk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C851AC8C53C008182BB /* Uptown Funk.mp3 */; };
+		EFF26C8E1AC8C940008182BB /* Jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C8D1AC8C940008182BB /* Jump.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,14 +56,24 @@
 		EFCC8C851AC8898200175FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFCC8C861AC8898200175FA5 /* LightMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LightMusicTests.m; sourceTree = "<group>"; };
 		EFCC8C901AC8A5AB00175FA5 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		EFCC8C921AC8A82C00175FA5 /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
-		EFCC8C931AC8A82C00175FA5 /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
-		EFCC8C941AC8A82C00175FA5 /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
-		EFCC8C951AC8A82C00175FA5 /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
-		EFCC8C961AC8A82C00175FA5 /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
-		EFCC8C971AC8A82C00175FA5 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
-		EFCC8C981AC8A82C00175FA5 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
-		EFCC8C991AC8A82C00175FA5 /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
+		EFCC8C9F1AC8AB2200175FA5 /* satisfaction.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = satisfaction.mp3; sourceTree = "<group>"; };
+		EFCC8CA11AC8AC9800175FA5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EFCC8CA31AC8AC9E00175FA5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EFCC8CA51AC8ACC100175FA5 /* AudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileReader.h; sourceTree = "<group>"; };
+		EFCC8CA61AC8ACC100175FA5 /* AudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioFileReader.mm; sourceTree = "<group>"; };
+		EFCC8CA71AC8ACC100175FA5 /* AudioFileWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileWriter.h; sourceTree = "<group>"; };
+		EFCC8CA81AC8ACC100175FA5 /* AudioFileWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileWriter.m; sourceTree = "<group>"; };
+		EFCC8CA91AC8ACC100175FA5 /* Novocaine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Novocaine.h; sourceTree = "<group>"; };
+		EFCC8CAA1AC8ACC100175FA5 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
+		EFCC8CAB1AC8ACC100175FA5 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		EFCC8CAC1AC8ACC100175FA5 /* RingBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RingBuffer.mm; sourceTree = "<group>"; };
+		EFF26C7F1AC8C53C008182BB /* Freeze Frame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Freeze Frame.mp3"; sourceTree = "<group>"; };
+		EFF26C801AC8C53C008182BB /* Seasons of Love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Seasons of Love.mp3"; sourceTree = "<group>"; };
+		EFF26C811AC8C53C008182BB /* All About That Bass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "All About That Bass.mp3"; sourceTree = "<group>"; };
+		EFF26C821AC8C53C008182BB /* Sweet Caroline.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Sweet Caroline.mp3"; sourceTree = "<group>"; };
+		EFF26C841AC8C53C008182BB /* Keep Holding On.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Keep Holding On.mp3"; sourceTree = "<group>"; };
+		EFF26C851AC8C53C008182BB /* Uptown Funk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Uptown Funk.mp3"; sourceTree = "<group>"; };
+		EFF26C8D1AC8C940008182BB /* Jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Jump.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFCC8C911AC8A5AB00175FA5 /* MediaPlayer.framework in Frameworks */,
+				EFF26C7E1AC8B4BE008182BB /* MediaPlayer.framework in Frameworks */,
+				EFCC8CA41AC8AC9E00175FA5 /* Foundation.framework in Frameworks */,
+				EFCC8CA21AC8AC9800175FA5 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +100,8 @@
 		EFCC8C5E1AC8898100175FA5 = {
 			isa = PBXGroup;
 			children = (
+				EFCC8CA31AC8AC9E00175FA5 /* Foundation.framework */,
+				EFCC8CA11AC8AC9800175FA5 /* UIKit.framework */,
 				EFCC8C9E1AC8A83B00175FA5 /* Novocaine */,
 				EFCC8C901AC8A5AB00175FA5 /* MediaPlayer.framework */,
 				EFCC8C691AC8898100175FA5 /* LightMusic */,
@@ -113,6 +137,14 @@
 		EFCC8C6A1AC8898100175FA5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EFF26C8D1AC8C940008182BB /* Jump.mp3 */,
+				EFF26C7F1AC8C53C008182BB /* Freeze Frame.mp3 */,
+				EFF26C801AC8C53C008182BB /* Seasons of Love.mp3 */,
+				EFF26C811AC8C53C008182BB /* All About That Bass.mp3 */,
+				EFF26C821AC8C53C008182BB /* Sweet Caroline.mp3 */,
+				EFF26C841AC8C53C008182BB /* Keep Holding On.mp3 */,
+				EFF26C851AC8C53C008182BB /* Uptown Funk.mp3 */,
+				EFCC8C9F1AC8AB2200175FA5 /* satisfaction.mp3 */,
 				EFCC8C6B1AC8898100175FA5 /* Info.plist */,
 				EFCC8C6C1AC8898100175FA5 /* main.m */,
 			);
@@ -139,14 +171,14 @@
 		EFCC8C9E1AC8A83B00175FA5 /* Novocaine */ = {
 			isa = PBXGroup;
 			children = (
-				EFCC8C921AC8A82C00175FA5 /* AudioFileReader.h */,
-				EFCC8C931AC8A82C00175FA5 /* AudioFileReader.mm */,
-				EFCC8C941AC8A82C00175FA5 /* AudioFileWriter.h */,
-				EFCC8C951AC8A82C00175FA5 /* AudioFileWriter.m */,
-				EFCC8C961AC8A82C00175FA5 /* Novocaine.h */,
-				EFCC8C971AC8A82C00175FA5 /* Novocaine.m */,
-				EFCC8C981AC8A82C00175FA5 /* RingBuffer.h */,
-				EFCC8C991AC8A82C00175FA5 /* RingBuffer.mm */,
+				EFCC8CA51AC8ACC100175FA5 /* AudioFileReader.h */,
+				EFCC8CA61AC8ACC100175FA5 /* AudioFileReader.mm */,
+				EFCC8CA71AC8ACC100175FA5 /* AudioFileWriter.h */,
+				EFCC8CA81AC8ACC100175FA5 /* AudioFileWriter.m */,
+				EFCC8CA91AC8ACC100175FA5 /* Novocaine.h */,
+				EFCC8CAA1AC8ACC100175FA5 /* Novocaine.m */,
+				EFCC8CAB1AC8ACC100175FA5 /* RingBuffer.h */,
+				EFCC8CAC1AC8ACC100175FA5 /* RingBuffer.mm */,
 			);
 			name = Novocaine;
 			sourceTree = "<group>";
@@ -231,9 +263,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF26C8B1AC8C53C008182BB /* Keep Holding On.mp3 in Resources */,
+				EFF26C871AC8C53C008182BB /* Seasons of Love.mp3 in Resources */,
+				EFF26C8C1AC8C53C008182BB /* Uptown Funk.mp3 in Resources */,
 				EFCC8C761AC8898100175FA5 /* Main.storyboard in Resources */,
 				EFCC8C7B1AC8898100175FA5 /* LaunchScreen.xib in Resources */,
+				EFF26C8E1AC8C940008182BB /* Jump.mp3 in Resources */,
+				EFCC8CA01AC8AB2200175FA5 /* satisfaction.mp3 in Resources */,
 				EFCC8C781AC8898100175FA5 /* Images.xcassets in Resources */,
+				EFF26C891AC8C53C008182BB /* Sweet Caroline.mp3 in Resources */,
+				EFF26C881AC8C53C008182BB /* All About That Bass.mp3 in Resources */,
+				EFF26C861AC8C53C008182BB /* Freeze Frame.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,11 +293,11 @@
 			files = (
 				EFCC8C731AC8898100175FA5 /* ViewController.mm in Sources */,
 				EFCC8C701AC8898100175FA5 /* AppDelegate.m in Sources */,
-				EFCC8C9C1AC8A82C00175FA5 /* Novocaine.m in Sources */,
-				EFCC8C9D1AC8A82C00175FA5 /* RingBuffer.mm in Sources */,
-				EFCC8C9B1AC8A82C00175FA5 /* AudioFileWriter.m in Sources */,
+				EFCC8CAF1AC8ACC100175FA5 /* Novocaine.m in Sources */,
+				EFCC8CB01AC8ACC100175FA5 /* RingBuffer.mm in Sources */,
+				EFCC8CAE1AC8ACC100175FA5 /* AudioFileWriter.m in Sources */,
 				EFCC8C6D1AC8898100175FA5 /* main.m in Sources */,
-				EFCC8C9A1AC8A82C00175FA5 /* AudioFileReader.mm in Sources */,
+				EFCC8CAD1AC8ACC100175FA5 /* AudioFileReader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +488,7 @@
 				EFCC8C8C1AC8898200175FA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EFCC8C8D1AC8898200175FA5 /* Build configuration list for PBXNativeTarget "LightMusicTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +497,7 @@
 				EFCC8C8F1AC8898200175FA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
