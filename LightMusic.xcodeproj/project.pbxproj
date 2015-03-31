@@ -29,6 +29,7 @@
 		EFF26C8B1AC8C53C008182BB /* Keep Holding On.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C841AC8C53C008182BB /* Keep Holding On.mp3 */; };
 		EFF26C8C1AC8C53C008182BB /* Uptown Funk.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C851AC8C53C008182BB /* Uptown Funk.mp3 */; };
 		EFF26C8E1AC8C940008182BB /* Jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF26C8D1AC8C940008182BB /* Jump.mp3 */; };
+		EFF26C911AC8D103008182BB /* SongModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF26C901AC8D103008182BB /* SongModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		EFF26C841AC8C53C008182BB /* Keep Holding On.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Keep Holding On.mp3"; sourceTree = "<group>"; };
 		EFF26C851AC8C53C008182BB /* Uptown Funk.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Uptown Funk.mp3"; sourceTree = "<group>"; };
 		EFF26C8D1AC8C940008182BB /* Jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Jump.mp3; sourceTree = "<group>"; };
+		EFF26C8F1AC8D103008182BB /* SongModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongModel.h; sourceTree = "<group>"; };
+		EFF26C901AC8D103008182BB /* SongModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				EFCC8C6F1AC8898100175FA5 /* AppDelegate.m */,
 				EFCC8C711AC8898100175FA5 /* ViewController.h */,
 				EFCC8C721AC8898100175FA5 /* ViewController.mm */,
+				EFF26C8F1AC8D103008182BB /* SongModel.h */,
+				EFF26C901AC8D103008182BB /* SongModel.m */,
 				EFCC8C741AC8898100175FA5 /* Main.storyboard */,
 				EFCC8C771AC8898100175FA5 /* Images.xcassets */,
 				EFCC8C791AC8898100175FA5 /* LaunchScreen.xib */,
@@ -297,6 +302,7 @@
 				EFCC8CB01AC8ACC100175FA5 /* RingBuffer.mm in Sources */,
 				EFCC8CAE1AC8ACC100175FA5 /* AudioFileWriter.m in Sources */,
 				EFCC8C6D1AC8898100175FA5 /* main.m in Sources */,
+				EFF26C911AC8D103008182BB /* SongModel.m in Sources */,
 				EFCC8CAD1AC8ACC100175FA5 /* AudioFileReader.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

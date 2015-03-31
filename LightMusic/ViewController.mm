@@ -9,12 +9,14 @@
 #import "ViewController.h"
 #import "Novocaine.h"
 #import "AudioFileReader.h"
+#import "SongModel.h"
 #import <MediaPlayer/MediaPlayer.h>
 
 #define kBufferLength 4096
 
 @interface ViewController ()
 
+@property (strong, nonatomic) SongModel* songModel;
 
 @property (weak, nonatomic) IBOutlet UIButton *relaxButton;
 @property (weak, nonatomic) IBOutlet UIButton *relaxLabel;
@@ -31,26 +33,30 @@
 @property (strong, nonatomic) Novocaine *audioManager;
 @property (nonatomic) float *audioData;
 
-@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSTimer *songTimeDecrementer;
 
 @property (strong, nonatomic) NSArray *descriptionArray;
-@property (strong, nonatomic) NSArray *relaxSongs;
-@property (strong, nonatomic) NSArray *partySongs;
-@property (strong, nonatomic) NSArray *gameSongs;
-@property (strong, nonatomic) NSDictionary *songTimes;
-@property (strong, nonatomic) NSDictionary *songArtists;
 
 @property (nonatomic) MusicMode mode;
 @property (nonatomic) BOOL playing;
 @property (nonatomic) int songIndex;
+@property (nonatomic) NSInteger secondsLeftInCurrentSong;
 
 @end
+
 
 @implementation ViewController
 
 AudioFileReader *fileReader;
 
 // Lazily instantiate
+
+- (SongModel*) songModel {
+    if(!_songModel)
+        _songModel = [SongModel sharedInstance];
+    
+    return _songModel;
+}
 
 - (Novocaine*)audioManager {
     if (!_audioManager) {
@@ -78,61 +84,10 @@ AudioFileReader *fileReader;
     return _descriptionArray;
 }
 
-- (NSArray *)relaxSongs {
-    if (!_relaxSongs) {
-        _relaxSongs = [NSArray arrayWithObjects:@"Sweet Caroline", @"Keep Holding On", @"Seasons Of Love", nil];
-    }
-    
-    return _relaxSongs;
-}
-
-- (NSArray *)partySongs {
-    if (!_partySongs) {
-        _partySongs = [NSArray arrayWithObjects:@"All About That Bass", @"Uptown Funk", @"Jump", nil];
-    }
-    
-    return _partySongs;
-}
-
-- (NSArray *)gameSongs {
-    if (!_gameSongs) {
-        _gameSongs = [NSArray arrayWithObjects:@"Freeze Frame", nil];
-    }
-    
-    return _gameSongs;
-}
-
-- (NSDictionary *)songArtists {
-    if (!_songArtists) {
-        _songArtists = @{
-                       @"Jump" : @"The Glee Cast", @"Uptown Funk" : @"The Glee Cast",
-                       @"All About That Bass" : @"The Glee Cast", @"Sweet Caroline" : @"The Glee Cast",
-                       @"Keep Holding On" : @"The Glee Cast", @"Seasons of Love" : @"The Glee Cast",
-                       @"Freeze Frame" : @"The J. Geils Band"
-                       };
-    }
-    
-    return _songArtists;
-}
-
-- (NSDictionary *)songTimes {
-    if (!_songTimes) {
-        _songTimes = @{
-                       @"Jump" : @236, @"Uptown Funk" : @262,
-                       @"All About That Bass" : @189, @"Sweet Caroline" : @119,
-                       @"Keep Holding On" : @245, @"Seasons of Love" : @185,
-                       @"Freeze Frame" : @237
-        };
-    }
-    
-    return _songTimes;
-}
-
 - (void)setMode:(MusicMode)mode {
     _mode = mode;
     [self updateMode];
     [self setAudioOutput];
-    [self createTimer];
 }
 
 - (void)setPlaying:(BOOL)playing {
@@ -143,25 +98,36 @@ AudioFileReader *fileReader;
         [fileReader play];
         if (![self.audioManager playing])
             [self.audioManager play];
+        [self createTimer];
     } else {
         [self.playPauseButton setImage:[UIImage imageNamed:@"play.png"]
                               forState:UIControlStateNormal];
         [fileReader pause];
         if ([self.audioManager playing])
             [self.audioManager pause];
+        [self.songTimeDecrementer invalidate];
     }
 }
 
 - (void)setSongIndex:(int)songIndex {
+    NSLog(@"%d", songIndex);
     if (self.mode == RELAX) {
-        songIndex = songIndex % [self.relaxSongs count];
+        songIndex = songIndex % [self.songModel.relaxSongs count];
     } else if (self.mode == PARTY) {
-        songIndex = songIndex % [self.partySongs count];
+        songIndex = songIndex % [self.songModel.partySongs count];
     } else if (self.mode == GAME) {
-        songIndex = songIndex % [self.gameSongs count];
+        songIndex = songIndex % [self.songModel.gameSongs count];
     }
-    
+    NSLog(@"%d", songIndex);
     _songIndex = songIndex;
+}
+
+- (void)setSecondsLeftInCurrentSong:(NSInteger)secondsLeftInCurrentSong {
+    _secondsLeftInCurrentSong = secondsLeftInCurrentSong;
+    if (secondsLeftInCurrentSong == 0) {
+        self.songIndex = self.songIndex + 1;
+        [self setAudioOutput];
+    }
 }
 
 - (void)viewDidLoad {
@@ -192,38 +158,36 @@ AudioFileReader *fileReader;
     
     _audioManager = nil;
     
-    [self.timer invalidate];
+    [self.songTimeDecrementer invalidate];
 }
 
 - (void)createTimer {
-    NSLog(@"create timer");
-    
-    if ([self.timer isValid]) {
-        NSLog(@"invalidate timer");
-        [self.timer invalidate];
+    if ([self.songTimeDecrementer isValid]) {
+        [self.songTimeDecrementer invalidate];
     }
     
-    NSString* songName = [self getSongAtIndex:self.songIndex];
-    NSNumber* timerNum = (NSNumber *)[self.songTimes valueForKey:songName];
-    NSInteger timerInt = [timerNum integerValue];
-    
-    NSLog(@"%ld", timerInt);
-    
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:timerInt
+    self.songTimeDecrementer = [NSTimer scheduledTimerWithTimeInterval:1
                                                   target:self
-                                                selector:@selector(setAudioOutput)
+                                                selector:@selector(decrementSecondsLeftInCurrentSong)
                                                 userInfo:nil
-                                                 repeats:NO];
+                                                 repeats:YES];
     
-    [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
-    
-    self.songIndex = self.songIndex + 1;
+    [[NSRunLoop mainRunLoop] addTimer:self.songTimeDecrementer forMode:NSRunLoopCommonModes];
+}
+
+// Decrements the number of seconds left in the current song playing
+- (void)decrementSecondsLeftInCurrentSong {
+    self.secondsLeftInCurrentSong--;
 }
 
 - (void)setAudioOutput {
+    // Get the current song name and the length of the song
     NSString* songName = [self getSongAtIndex:self.songIndex];
+    NSNumber* timerNum = (NSNumber *)[self.songModel.songTimes valueForKey:songName];
+    self.secondsLeftInCurrentSong = [timerNum integerValue];
+    
     self.songTitleLabel.text = songName;
-    self.artistLabel.text = (NSString *)[self.songArtists valueForKey:songName];
+    self.artistLabel.text = (NSString *)[self.songModel.songArtists valueForKey:songName];
     
     NSLog(@"Song index = %d\nSong name = %@", self.songIndex, songName);
     // load samples from an mp3 file and set them to output to the speakers!!
@@ -235,8 +199,6 @@ AudioFileReader *fileReader;
                   samplingRate: self.audioManager.samplingRate
                   numChannels: self.audioManager.numOutputChannels];
     
-    
-    //[fileReader play];
     fileReader.currentTime = 0.0;
     
     [self.audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
@@ -249,11 +211,11 @@ AudioFileReader *fileReader;
 
 - (NSString *)getSongAtIndex:(int)songIndex {
     if (self.mode == RELAX) {
-        return self.relaxSongs[songIndex];
+        return self.songModel.relaxSongs[songIndex];
     } else if (self.mode == PARTY) {
-        return self.partySongs[songIndex];
+        return self.songModel.partySongs[songIndex];
     } else {
-        return self.gameSongs[songIndex];
+        return self.songModel.gameSongs[songIndex];
     }
 }
 
