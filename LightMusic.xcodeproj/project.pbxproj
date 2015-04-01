@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFBAF85F1ACC934C00ACD2C7 /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBAF85D1ACC934C00ACD2C7 /* BLE.m */; };
+		EFBAF8621ACC936900ACD2C7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBAF8611ACC936900ACD2C7 /* CoreBluetooth.framework */; };
 		EFCC8C6D1AC8898100175FA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C6C1AC8898100175FA5 /* main.m */; };
 		EFCC8C701AC8898100175FA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C6F1AC8898100175FA5 /* AppDelegate.m */; };
 		EFCC8C731AC8898100175FA5 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFCC8C721AC8898100175FA5 /* ViewController.mm */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EFBAF85C1ACC934C00ACD2C7 /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLE.h; sourceTree = "<group>"; };
+		EFBAF85D1ACC934C00ACD2C7 /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLE.m; sourceTree = "<group>"; };
+		EFBAF85E1ACC934C00ACD2C7 /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
+		EFBAF8611ACC936900ACD2C7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		EFCC8C671AC8898100175FA5 /* LightMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCC8C6B1AC8898100175FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFCC8C6C1AC8898100175FA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFBAF8621ACC936900ACD2C7 /* CoreBluetooth.framework in Frameworks */,
 				EFF26C7E1AC8B4BE008182BB /* MediaPlayer.framework in Frameworks */,
 				EFCC8CA41AC8AC9E00175FA5 /* Foundation.framework in Frameworks */,
 				EFCC8CA21AC8AC9800175FA5 /* UIKit.framework in Frameworks */,
@@ -100,9 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EFBAF8601ACC935100ACD2C7 /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				EFBAF85C1ACC934C00ACD2C7 /* BLE.h */,
+				EFBAF85D1ACC934C00ACD2C7 /* BLE.m */,
+				EFBAF85E1ACC934C00ACD2C7 /* BLEDefines.h */,
+			);
+			name = BLE;
+			sourceTree = "<group>";
+		};
 		EFCC8C5E1AC8898100175FA5 = {
 			isa = PBXGroup;
 			children = (
+				EFBAF8611ACC936900ACD2C7 /* CoreBluetooth.framework */,
+				EFBAF8601ACC935100ACD2C7 /* BLE */,
 				EFCC8CA31AC8AC9E00175FA5 /* Foundation.framework */,
 				EFCC8CA11AC8AC9800175FA5 /* UIKit.framework */,
 				EFCC8C9E1AC8A83B00175FA5 /* Novocaine */,
@@ -299,6 +318,7 @@
 				EFCC8C731AC8898100175FA5 /* ViewController.mm in Sources */,
 				EFCC8C701AC8898100175FA5 /* AppDelegate.m in Sources */,
 				EFCC8CAF1AC8ACC100175FA5 /* Novocaine.m in Sources */,
+				EFBAF85F1ACC934C00ACD2C7 /* BLE.m in Sources */,
 				EFCC8CB01AC8ACC100175FA5 /* RingBuffer.mm in Sources */,
 				EFCC8CAE1AC8ACC100175FA5 /* AudioFileWriter.m in Sources */,
 				EFCC8C6D1AC8898100175FA5 /* main.m in Sources */,

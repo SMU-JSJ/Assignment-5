@@ -1,17 +1,18 @@
 //
 //  AppDelegate.h
-//  LightMusic
+//  Light Music
 //
-//  Created by ch484-mac7 on 3/29/15.
-//  Copyright (c) 2015 SMU. All rights reserved.
+//  Created by Cheong on 15/8/12.
+//  Copyright (c) 2012 RedBear Lab., All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "BLE.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,BLEDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) BLE* bleShield;
 
 
 @end
-

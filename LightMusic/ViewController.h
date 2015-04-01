@@ -16,5 +16,11 @@ typedef enum musicMode {
     GAME
 } MusicMode;
 
+typedef enum connectedState {
+    DISCONNECTED,
+    CONNECTING,
+    CONNECTED
+} ConnectedState;
+
 @end
 
