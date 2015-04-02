@@ -57,21 +57,21 @@ AudioFileReader *fileReader;
 
 // Lazily instantiate
 
-- (SongModel*)songModel {
+- (SongModel *)songModel {
     if(!_songModel)
         _songModel = [SongModel sharedInstance];
     
     return _songModel;
 }
 
-- (Novocaine*)audioManager {
+- (Novocaine *)audioManager {
     if (!_audioManager) {
         _audioManager = [Novocaine audioManager];
     }
     return _audioManager;
 }
 
-- (float*)audioData {
+- (float *)audioData {
     if (!_audioData) {
         _audioData = (float*)calloc(kBufferLength, sizeof(float));
     }
@@ -79,7 +79,7 @@ AudioFileReader *fileReader;
 }
 
 // Defines an array of descriptions for each mode
-- (NSArray*)descriptionArray {
+- (NSArray *)descriptionArray {
     if (!_descriptionArray) {
         _descriptionArray = [NSArray arrayWithObjects:
             @"Mellow music plays while the green light is shining.",
@@ -91,7 +91,7 @@ AudioFileReader *fileReader;
     return _descriptionArray;
 }
 
-- (BLE*)bleShield {
+- (BLE *)bleShield {
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     return appDelegate.bleShield;
 }
@@ -120,6 +120,7 @@ AudioFileReader *fileReader;
     color2 = [UIColor darkGrayColor];
     color3 = [UIColor darkGrayColor];
     
+    // Set the icons based on the current mode
     if (self.mode == RELAX) {
         image1 = [UIImage imageNamed:@"relax_blue.png"];
         color1 = [UIColor blueColor];
@@ -198,7 +199,7 @@ AudioFileReader *fileReader;
     }
 }
 
-// 
+// Update the Bluetooth icon based on the program's current state
 - (void)setConnected:(ConnectedState)connected {
     _connected = connected;
     if (connected == DISCONNECTED) {
@@ -214,6 +215,7 @@ AudioFileReader *fileReader;
     }
 }
 
+// Update the song index so that it loops from the end back to the beginning
 - (void)setSongIndex:(int)songIndex {
     if (self.mode == RELAX) {
         songIndex = songIndex % [self.songModel.relaxSongs count];
@@ -225,6 +227,8 @@ AudioFileReader *fileReader;
     _songIndex = songIndex;
 }
 
+// When secondsLeftInCurrentSong reaches 0, increment the songIndex and
+// reset the audio output
 - (void)setSecondsLeftInCurrentSong:(NSInteger)secondsLeftInCurrentSong {
     _secondsLeftInCurrentSong = secondsLeftInCurrentSong;
     if (secondsLeftInCurrentSong == 0) {
@@ -233,15 +237,26 @@ AudioFileReader *fileReader;
     }
 }
 
+// When the application loads, set up notifications
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnBLEDidConnect:) name:@"BLEDidConnect" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(OnBLEDidDisconnect:) name:@"BLEDidDisconnect" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (OnBLEDidReceiveData:) name:@"BLEReceievedData" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(OnBLEDidConnect:)
+                                                 name:@"BLEDidConnect"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(OnBLEDidDisconnect:)
+                                                 name:@"BLEDidDisconnect"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector (OnBLEDidReceiveData:)
+                                                 name:@"BLEReceievedData"
+                                               object:nil];
 }
 
+//  When the application will appear, set the volume and initial audio output
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -253,6 +268,8 @@ AudioFileReader *fileReader;
     self.playing = YES;
 }
 
+// When the application will disappear, stop the audioManager and invalidate
+// the songTimeDecrementer timer
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
@@ -267,7 +284,8 @@ AudioFileReader *fileReader;
     // call function to disconnect BLE
 }
 
-
+// Send data to the arduino to indicate whether the red and/or green lights
+// should be on and whether the green light should be flashing
 - (void)sendDataToArduino {
     int LEDcode;
     
@@ -296,8 +314,9 @@ AudioFileReader *fileReader;
     [self.bleShield write:data];
 }
 
+// Find Bluetooth devices to connect with
 - (void)scanForDevices {
-    // disconnect from any peripherals
+    // Disconnect from any peripherals
     if (self.bleShield.activePeripheral)
         if(self.bleShield.activePeripheral.isConnected)
         {
@@ -305,15 +324,15 @@ AudioFileReader *fileReader;
             return;
         }
     
-    // set peripheral to nil
+    // Set peripheral to nil
     if (self.bleShield.peripherals)
         self.bleShield.peripherals = nil;
     
-    //start search for peripherals with a timeout of 3 seconds
+    // Start search for peripherals with a timeout of 3 seconds
     // this is an asunchronous call and will return before search is complete
     [self.bleShield findBLEPeripherals:3];
     
-    // after three seconds, try to connect to first peripheral
+    // After three seconds, try to connect to first peripheral
     [NSTimer scheduledTimerWithTimeInterval:(float)3.0
                                      target:self
                                    selector:@selector(didFinishScanning:)
@@ -321,28 +340,36 @@ AudioFileReader *fileReader;
                                     repeats:NO];
 }
 
-- (void)didFinishScanning:(NSTimer*)timer {
-    CBPeripheral* aPeripheral;
-    NSString* perName;
+// Once scanning is complete, connect to the JSJ device
+- (void)didFinishScanning:(NSTimer *)timer {
+    CBPeripheral *aPeripheral;
+    NSString *perName;
     
+    // Iterate through all the peripherals searching for JSJ
     for (int i = 0; i < [self.bleShield.peripherals count]; i++) {
         aPeripheral = [self.bleShield.peripherals objectAtIndex:i];
         perName = aPeripheral.name;
         
+        // If the JSJ device is found, connect to that peripheral and return
         if ([perName isEqualToString:@"JSJ"]) {
             [self.bleShield connectPeripheral:aPeripheral];
             return;
         }
     }
     
+    // If the JSJ device could not be found, disconnect
     self.connected = DISCONNECTED;
 }
 
+// Create the songTimeDecrementer timer to decrementer the seconds left
+// in the current song
 - (void)createTimer {
     if ([self.songTimeDecrementer isValid]) {
         [self.songTimeDecrementer invalidate];
     }
     
+    // Call the function to decrement the number of seconds left in the current
+    // song by 1 every second
     self.songTimeDecrementer = [NSTimer scheduledTimerWithTimeInterval:1
                                                   target:self
                                                 selector:@selector(decrementSecondsLeftInCurrentSong)
@@ -357,12 +384,14 @@ AudioFileReader *fileReader;
     self.secondsLeftInCurrentSong--;
 }
 
+// Set the audio output to the current song intended to play
 - (void)setAudioOutput {
     // Get the current song name and the length of the song
-    NSString* songName = [self getSongAtIndex:self.songIndex];
-    NSNumber* timerNum = (NSNumber *)[self.songModel.songTimes valueForKey:songName];
+    NSString *songName = [self getSongAtIndex:self.songIndex];
+    NSNumber *timerNum = (NSNumber *)[self.songModel.songTimes valueForKey:songName];
     self.secondsLeftInCurrentSong = [timerNum integerValue];
     
+    // Set the song title and song artist labels
     self.songTitleLabel.text = songName;
     self.artistLabel.text = (NSString *)[self.songModel.songArtists valueForKey:songName];
     
@@ -377,14 +406,16 @@ AudioFileReader *fileReader;
     
     fileReader.currentTime = 0.0;
     
+    // Set the audio output
     [self.audioManager setOutputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels)
      {
-         // this loads new samples from the file reader object and saves them into the output speaker buffers
+         // This loads new samples from the file reader object and saves them into the output speaker buffers
          [fileReader retrieveFreshAudio:data numFrames:numFrames numChannels:numChannels];
          
      }];
 }
 
+// Get the song from the correct song array based on the current mode
 - (NSString *)getSongAtIndex:(int)songIndex {
     if (self.mode == RELAX) {
         return self.songModel.relaxSongs[songIndex];
@@ -395,32 +426,40 @@ AudioFileReader *fileReader;
     }
 }
 
+// Deallocate the audioData
 - (void)dealloc {
     free(self.audioData);
     self.audioManager = nil;
 }
 
+// When the volume slider is changed, update the volume on the device
 - (IBAction)volumeSliderChanged:(UISlider *)sender {
     MPMusicPlayerController *musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
     musicPlayer.volume = sender.value;
 }
 
+// When the relax icon is clicked, change the mode
 - (IBAction)relaxClicked:(UIButton *)sender {
     self.mode = RELAX;
 }
 
+// When the party icon is clicked, change the mode
 - (IBAction)partyClicked:(UIButton *)sender {
     self.mode = PARTY;
 }
 
+// When the game icon is clicked, change the mode
 - (IBAction)gameClicked:(UIButton *)sender {
     self.mode = GAME;
 }
 
+// When the play/pause button is clicked, toggle whether the song is played or paused
 - (IBAction)playPauseButtonClicked:(UIButton *)sender {
     [self togglePlayPause];
 }
 
+// If the song is current playing, set it to be paused
+// Otherwise, set it to be playing
 - (void)togglePlayPause {
     if (self.playing) {
         self.playing = NO;
@@ -429,6 +468,8 @@ AudioFileReader *fileReader;
     }
 }
 
+// When the connect/disconnect button is clicked, connect to the Bluetooth
+// or disconnect to the Bluetooth
 - (IBAction)connectDisconnectButtonClicked:(UIButton *)sender {
     if (self.connected) {
         if(self.bleShield.activePeripheral.isConnected)
@@ -444,7 +485,7 @@ AudioFileReader *fileReader;
 // Parse the received data from NSNotification
 -(void) OnBLEDidReceiveData:(NSNotification *)notification
 {
-    NSMutableData* d = [[notification userInfo] objectForKey:@"data"];
+    NSMutableData *d = [[notification userInfo] objectForKey:@"data"];
     const uint8_t *bytes = (const uint8_t *)[d bytes];
     
     uint8_t B0 = bytes[0], B3 = bytes[3], B1 = 0, P1 = 0, P2 = 0, L1 = 0, L2 = 0;
@@ -496,7 +537,7 @@ AudioFileReader *fileReader;
         [self togglePlayPause];
     }
     
-    // Potentiometer
+    // Potentiometer: set the volume to the value indicated by P1P2
     if (B0 == 11 || B3 == 11) {
         int potentiometer = (P1 << 8) + P2;
         float volumeValue = (float)potentiometer/1023.0;
@@ -508,10 +549,13 @@ AudioFileReader *fileReader;
         }
     }
     
-    // Light sensor
+    // Light sensor: if the value of L1L2 is greater than 900, the lights are on
     if (self.mode == GAME) {
         int light = (L1 << 8) + L2;
-        if (light >= 900) {
+        
+        // If the lights are on, pause the music
+        // Otherwise, play
+        if (light >= 800) {
             self.playing = NO;
         } else {
             self.playing = YES;
@@ -519,12 +563,13 @@ AudioFileReader *fileReader;
     }
 }
 
-// we disconnected, stop running
+// Disconnected, change connection state and update playing
 - (void) OnBLEDidDisconnect:(NSNotification *)notification {
     self.connected = DISCONNECTED;
     self.playing = self.playing;
 }
 
+// Connected, change connection state and update playing
 -(void) OnBLEDidConnect:(NSNotification *)notification {
     self.connected = CONNECTED;
     self.playing = self.playing;
