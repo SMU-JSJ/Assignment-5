@@ -1,4 +1,4 @@
-//
+//  Team JSJ - Jordan Kayse, Jessica Yeh, Story Zanetti
 //  ViewController.m
 //  LightMusic
 //
@@ -6,13 +6,11 @@
 //  Copyright (c) 2015 SMU. All rights reserved.
 //
 
+#import <MediaPlayer/MediaPlayer.h>
 #import "ViewController.h"
-
 #import "Novocaine.h"
 #import "AudioFileReader.h"
 #import "SongModel.h"
-#import <MediaPlayer/MediaPlayer.h>
-
 #import "BLE.h"
 #import "AppDelegate.h"
 
@@ -20,7 +18,7 @@
 
 @interface ViewController ()
 
-@property (strong, nonatomic) SongModel* songModel;
+@property (strong, nonatomic) SongModel *songModel;
 
 @property (weak, nonatomic) IBOutlet UIButton *relaxButton;
 @property (weak, nonatomic) IBOutlet UIButton *relaxLabel;
@@ -38,7 +36,7 @@
 @property (strong, nonatomic) Novocaine *audioManager;
 @property (nonatomic) float *audioData;
 
-@property (strong, nonatomic, readonly) BLE* bleShield;
+@property (strong, nonatomic, readonly) BLE *bleShield;
 
 @property (strong, nonatomic) NSTimer *songTimeDecrementer;
 
@@ -80,12 +78,13 @@ AudioFileReader *fileReader;
     return _audioData;
 }
 
+// Defines an array of descriptions for each mode
 - (NSArray*)descriptionArray {
     if (!_descriptionArray) {
         _descriptionArray = [NSArray arrayWithObjects:
-            @"Music gets quieter and more mellow as the room gets darker.",
-            @"Music gets louder as the party gets darker, and the green light blinks faster.",
-            @"Lights are off, the music plays. Lights on, the music stops and you freeze!",
+            @"Mellow music plays while the green light is shining.",
+            @"Exciting music plays as the green light flashes.",
+            @"Lights off, the music plays. Lights on, the music stops and you freeze!",
             nil];
     }
     
@@ -97,6 +96,7 @@ AudioFileReader *fileReader;
     return appDelegate.bleShield;
 }
 
+// Updates all values including audio output when the mode is changed
 - (void)setMode:(MusicMode)mode {
     _mode = mode;
     [self updateMode];
@@ -104,6 +104,8 @@ AudioFileReader *fileReader;
     self.playing = self.playing;
 }
 
+// Updates the mode images so that either the relax, party, or game image
+// is highlighted
 - (void)updateMode {
     self.songIndex = 0;
     
@@ -147,11 +149,16 @@ AudioFileReader *fileReader;
                          forState:UIControlStateNormal];
 }
 
+// Plays or pauses the music and updates the play/pause button based on the
+// value of playing
 - (void)setPlaying:(BOOL)playing {
-    
     _playing = playing;
     
+    // If the app is changed to playing, display the pause icon and play the music.
+    // Otherwise, switch the icon to play, and pause the music
     if (playing) {
+        // If the app is in game mode and bluetooth is connected, disable the
+        // play/pause button
         if (self.mode == GAME && self.connected == CONNECTED) {
             [self.playPauseButton setImage:[UIImage imageNamed:@"pause_disabled.png"]
                                   forState:UIControlStateNormal];
@@ -167,6 +174,8 @@ AudioFileReader *fileReader;
             [self.audioManager play];
         [self createTimer];
     } else {
+        // If the app is in game mode and bluetooth is connected, disable the
+        // play/pause button
         if (self.mode == GAME && self.connected == CONNECTED) {
             [self.playPauseButton setImage:[UIImage imageNamed:@"play_disabled.png"]
                                   forState:UIControlStateNormal];
@@ -183,11 +192,13 @@ AudioFileReader *fileReader;
         [self.songTimeDecrementer invalidate];
     }
     
+    // If the app is connected to bluetooth, send data to the Arduino
     if (self.connected == CONNECTED) {
         [self sendDataToArduino];
     }
 }
 
+// 
 - (void)setConnected:(ConnectedState)connected {
     _connected = connected;
     if (connected == DISCONNECTED) {
