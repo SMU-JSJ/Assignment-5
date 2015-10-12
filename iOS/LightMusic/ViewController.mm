@@ -318,7 +318,7 @@ AudioFileReader *fileReader;
 - (void)scanForDevices {
     // Disconnect from any peripherals
     if (self.bleShield.activePeripheral)
-        if(self.bleShield.activePeripheral.isConnected)
+        if(self.bleShield.isConnected)
         {
             [[self.bleShield CM] cancelPeripheralConnection:[self.bleShield activePeripheral]];
             return;
@@ -472,7 +472,7 @@ AudioFileReader *fileReader;
 // or disconnect to the Bluetooth
 - (IBAction)connectDisconnectButtonClicked:(UIButton *)sender {
     if (self.connected) {
-        if(self.bleShield.activePeripheral.isConnected)
+        if(self.bleShield.isConnected)
         {
             [[self.bleShield CM] cancelPeripheralConnection:[self.bleShield activePeripheral]];
         }
